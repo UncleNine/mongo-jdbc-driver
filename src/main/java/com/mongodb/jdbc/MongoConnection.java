@@ -617,8 +617,9 @@ public class MongoConnection implements Connection {
                     break;
                 case Community:
                     // Community edition is disallowed.
-                    throw new SQLException(
-                            "Community edition detected. The JDBC driver is intended for use with MongoDB Enterprise edition or Atlas Data Federation.");
+                    // throw new SQLException(
+                    //         "Community edition detected. The JDBC driver is intended for use with MongoDB Enterprise edition or Atlas Data Federation.");
+                    break;
                 case Enterprise:
                     String version = MongoDriver.getVersion();
                     if (MongoDriver.isEapBuild()) {
