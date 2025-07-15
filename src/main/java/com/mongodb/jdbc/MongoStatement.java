@@ -308,7 +308,8 @@ public class MongoStatement implements Statement {
             } else if (conn.getClusterType() == MongoConnection.MongoClusterType.Enterprise) {
                 result = executeDirectClusterQuery(sql);
             } else {
-                throw new SQLException("Unsupported cluster type: " + conn.clusterType);
+                //throw new SQLException("Unsupported cluster type: " + conn.clusterType);
+                result = executeDirectClusterQuery(sql);
             }
         } catch (MongoExecutionTimeoutException e) {
             throw new SQLTimeoutException(e);
